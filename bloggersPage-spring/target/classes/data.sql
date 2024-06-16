@@ -1,0 +1,9 @@
+-- to insert only if table is empty
+
+INSERT INTO role (name) SELECT 'ROLE_ADMIN' WHERE NOT EXISTS (SELECT * FROM role WHERE role.name='ROLE_ADMIN');
+INSERT INTO role (name) SELECT 'ROLE_BLOGGER' WHERE NOT EXISTS (SELECT * FROM role WHERE role.name='ROLE_BLOGGER');
+INSERT INTO role (name) SELECT 'ROLE_VISITOR' WHERE NOT EXISTS (SELECT * FROM role WHERE role.name='ROLE_VISITOR');
+
+
+--INSERT INTO role (name) VALUES ('ROLE_ADMIN');
+--INSERT INTO role (name) VALUES ('ROLE_USER');
