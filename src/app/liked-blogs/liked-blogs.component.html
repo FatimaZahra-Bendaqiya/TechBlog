@@ -1,0 +1,11 @@
+<div class="liked-blog">
+  <h2>Liked Blogs</h2>
+  <ul>
+    <li *ngFor="let blog of likedBlogs">
+      <a [routerLink]="['/blog-page', blog.id]">
+        {{ blog.title }} - {{ blog.blogger }}
+      </a>
+      <button (click)="unlikeBlog(blog?.id)">Dislike</button>
+    </li>
+  </ul>
+</div>

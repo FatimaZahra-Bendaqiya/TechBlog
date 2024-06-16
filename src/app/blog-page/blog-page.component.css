@@ -1,0 +1,70 @@
+.blog-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.blog {
+  width: 600px;
+  padding: 20px;
+  background-color: darkslategrey;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.blog-title {
+  font-size: 30px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.blog-text {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  margin: 10px 0;
+  white-space: pre-line; /* Preserve line breaks and formatting */
+}
+
+.blog-info {
+  margin-top: 20px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+}
+
+.blog-info p {
+  font-size: 16px;
+  margin: 5px 0;
+  font-family: Arial, sans-serif;
+}
+
+.blog button {
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.blog button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Rating Stars */
+.rating-stars {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star.active,
+.star:hover {
+  color: #ffc107; /* Color when hovered or active */
+}

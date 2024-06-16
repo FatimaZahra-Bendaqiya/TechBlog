@@ -1,0 +1,36 @@
+<div class="gothic-page-header">
+  <div class="container">
+    <h1>Tech Blog</h1>
+  </div>
+</div>
+
+<nav class="gothic-navbar">
+  <div class="container-fluid">
+    <ul class="gothic-nav">
+      <li class="gothic-nav-item">
+        <a class="gothic-nav-link" routerLink="home" routerLinkActive="active">Home</a>
+      </li>
+      <li *ngIf="authority === 'visitor'" class="gothic-nav-item">
+        <a class="gothic-nav-link" routerLink="liked-blogs" routerLinkActive="active">Likes</a>
+      </li>
+      <li *ngIf="authority === 'blogger'" class="gothic-nav-item">
+        <a class="gothic-nav-link" routerLink="blog" routerLinkActive="active">My Blogs</a>
+      </li>
+      <li *ngIf="authority" class="gothic-nav-item">
+        <a class="gothic-nav-link" routerLink="profile" routerLinkActive="active">Profile</a>
+      </li>
+      <li *ngIf="!authority" class="gothic-nav-item">
+        <a class="gothic-nav-link" routerLink="auth/login" routerLinkActive="active">Login</a>
+      </li>
+      <li *ngIf="authority" class="gothic-nav-item">
+        <a class="gothic-nav-link" routerLink="logout" routerLinkActive="active">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="content" class="gothic-content">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

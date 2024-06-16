@@ -1,0 +1,10 @@
+<div *ngIf="blog" class="blog-container">
+  <div class="blog">
+    <h2 class="blog-title">{{ blog.title }}</h2>
+    <p class="blog-text">{{ blog.text }}</p>
+    <div class="blog-info">
+      <p>Blogger: {{blog.bloggerName}} {{blog.bloggerSecondName}}</p>
+      <p>Genre: {{ blog.genre }}</p>
+    </div>
+  </div>
+</div>
