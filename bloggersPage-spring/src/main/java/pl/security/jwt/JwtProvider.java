@@ -22,6 +22,7 @@ public class JwtProvider {
 
         return Jwts.builder()
                 .setSubject(userPrinciple.getUsername())
+                .claim("userId", userPrinciple.getId())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpiration*1000))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
@@ -52,6 +53,14 @@ public class JwtProvider {
                 .setSigningKey(jwtSecret)
                 .parseClaimsJws(token)
                 .getBody().getSubject();
+    }
+
+    public Long getUserIdFromJwtToken(String token) {
+        return Jwts.parser()
+                .setSigningKey(jwtSecret)
+                .parseClaimsJws(token)
+                .getBody()
+                .get("userId", Long.class);
     }
 
 }
