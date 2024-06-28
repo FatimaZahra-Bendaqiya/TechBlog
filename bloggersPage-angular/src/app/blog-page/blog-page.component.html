@@ -1,0 +1,29 @@
+<div *ngIf="blog" class="blog-container">
+  <div class="blog">
+    <h2 class="blog-title">{{ blog.title }}</h2>
+    <p class="blog-text">{{ blog.text }}</p>
+    <div class="blog-info">
+      <p>Blogger: {{blog.bloggerName}} {{blog.bloggerSecondName}}</p>
+      <p>Genre: {{ blog.genre }}</p>
+      <p>Current Rating: {{ blog.rating }}/5</p>
+      <p>Number of Ratings: {{ blog.numberOfRatings }}</p>
+      <p *ngIf="blog.visitorRating !== undefined">Your Rating: {{ blog.visitorRating }}</p>
+
+      <div class="rating-container" *ngIf="!isRatingDisabled()">
+        <div class="rating-form">
+          <form (submit)="rateBlog(rateInput.valueAsNumber)">
+            <input #rateInput type="number" placeholder="Enter a rating" min="1" max="5">
+            <input type="submit" value="Post your rate"/>
+          </form>
+        </div>
+      </div>
+
+      <div class="rating-container" *ngIf="isRatingDisabled()">
+        <div class="rating-form">
+          <input #updateRateInput type="number" [value]="blog.visitorRating" placeholder="Enter your rating" min="1" max="5">
+          <button (click)="(updateRateInput.valueAsNumber)">Update Rating</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
